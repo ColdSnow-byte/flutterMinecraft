@@ -1,0 +1,21 @@
+[package]
+name = "rust_renderer"
+version = "0.1.0"
+edition = "2021"
+description = "Offscreen wgpu renderer driven by a winit event loop, consumed by Flutter through an external texture."
+publish = false
+
+[lib]
+name = "rust_renderer"
+crate-type = ["cdylib"]
+
+[dependencies]
+wgpu = "22"
+winit = "0.30"
+glam = "0.29"
+bytemuck = { version = "1", features = ["derive"] }
+pollster = "0.3"
+
+[profile.release]
+opt-level = 3
+strip = true
